@@ -1,0 +1,322 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `index.html` with full semantic markup skeleton": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933340705
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933349886
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933541645
+      }
+    ],
+    "1.2 Create `styles.css` with base styles and CSS custom properties": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933342726
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933350225
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933542194
+      }
+    ],
+    "1.3 Create `app.js` with the top-level state object and constants": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933342950
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933350795
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933542782
+      }
+    ],
+    "2.1 Implement `saveState()` and `loadState()`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933343085
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933547320
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933639109
+      }
+    ],
+    "3.1 Implement `validateEntry(name, amount, category)` and `addExpense(name, amount, category)`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933343251
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933644168
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933758189
+      }
+    ],
+    "3.4 Implement `deleteExpense(id)` and `validateBudget(value)` / `setBudget(value)`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933343377
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933644462
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933758917
+      }
+    ],
+    "4. Checkpoint — persistence and state layer": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933343513
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933820492
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933862283
+      }
+    ],
+    "5.1 Implement `formatCurrency(value)` and `renderBalance(expenses)`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933343660
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933881070
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934269228
+      }
+    ],
+    "5.3 Implement `renderTransactionList(expenses)`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933343790
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933881618
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934269524
+      }
+    ],
+    "5.6 Implement `renderProgressIndicator(balance, budget)`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933343927
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933882292
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934269691
+      }
+    ],
+    "5.9 Implement `renderPieChart(expenses)`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933344055
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933882531
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934269860
+      }
+    ],
+    "6. Checkpoint — renderers": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933344243
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934275789
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934311324
+      }
+    ],
+    "7.1 Implement `computeBalance(expenses)` and `renderAll()`": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933344374
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934316130
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934373061
+      }
+    ],
+    "7.3 Implement `bindEvents()` — expense form submission": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933344507
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934316700
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934373596
+      }
+    ],
+    "7.4 Implement `bindEvents()` — delete via event delegation and budget control": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933344652
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934317508
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934374165
+      }
+    ],
+    "7.6 Wire the initialization sequence": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933344786
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934318193
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934375123
+      }
+    ],
+    "8. Final checkpoint — full integration": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933344922
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934386888
+      },
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934438239
+      }
+    ],
+    "1. Create project files and HTML skeleton": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933542940
+      }
+    ],
+    "2. Implement the persistence layer": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933639260
+      }
+    ],
+    "3. Implement state mutation functions": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790933759032
+      }
+    ],
+    "7. Implement `renderAll()`, event binding, and initialization": [
+      {
+        "executionId": "cf93e01a-8808-49d6-8114-a09b3216a693",
+        "chatSessionId": "sess_c2abe273-5a19-41d7-8ae1-cf47da338217",
+        "timestamp": 1790934375282
+      }
+    ]
+  }
+}

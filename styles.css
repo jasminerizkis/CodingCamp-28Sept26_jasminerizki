@@ -1,0 +1,672 @@
+/* =============================================================
+   Expense & Budget Visualizer — styles.css
+   Requirements: 5.4, 5.5, 5.6, 9.3, 10.3, 10.4
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. CSS Custom Properties
+   ------------------------------------------------------------- */
+:root {
+  /* State colors */
+  --color-safe: #4caf50;
+  --color-warning: #ff9800;
+  --color-exceeded: #f44336;
+  --color-neutral: #9e9e9e;
+
+  /* Base palette */
+  --color-bg: #f9fafb;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+
+  /* Design tokens */
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/* -------------------------------------------------------------
+   2. CSS Reset & Base Typography
+   ------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  padding: 25px;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-width: 320px;
+
+}
+
+.dark-mode {
+  background-color: black;
+
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--space-md);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+input {
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+/* -------------------------------------------------------------
+   3. Layout — Header
+   ------------------------------------------------------------- */
+header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#balance-display {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+#balance {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* -------------------------------------------------------------
+   4. Layout — Main Grid
+   Desktop: two columns (left panel | right panel)
+   Mobile (≤ 640px): single column
+   ------------------------------------------------------------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-lg);
+}
+
+/* Assign sections to grid areas */
+.form-section {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.budget-section {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.transactions-section {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.chart-section {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Persistence error banner spans full width */
+#persistence-error {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+/* When error banner is visible, push sections down */
+#persistence-error:not(.hidden) ~ .form-section {
+  grid-row: 2;
+}
+#persistence-error:not(.hidden) ~ .budget-section {
+  grid-row: 3;
+}
+#persistence-error:not(.hidden) ~ .transactions-section {
+  grid-row: 2;
+}
+#persistence-error:not(.hidden) ~ .chart-section {
+  grid-row: 3;
+}
+
+/* -------------------------------------------------------------
+   5. Card / Surface Panels
+   ------------------------------------------------------------- */
+.form-section,
+.budget-section,
+.transactions-section,
+.chart-section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+}
+
+/* -------------------------------------------------------------
+   6. Form Styles
+   ------------------------------------------------------------- */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.field-group:last-of-type {
+  margin-bottom: var(--space-lg);
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+input[type="text"].invalid,
+input[type="number"].invalid {
+  border-color: var(--color-exceeded);
+}
+
+/* Hide browser number input spin buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Inline field error messages */
+.field-error {
+  font-size: 0.75rem;
+  color: var(--color-exceeded);
+  min-height: 1em;
+  display: block;
+}
+
+/* Primary action button */
+button[type="submit"],
+#budget-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+button[type="submit"]:hover,
+#budget-btn:hover {
+  background-color: #4f46e5;
+}
+
+button[type="submit"]:active,
+#budget-btn:active {
+  transform: translateY(1px);
+}
+
+button[type="submit"]:focus-visible,
+#budget-btn:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.4);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------
+   7. Budget Section
+   ------------------------------------------------------------- */
+.budget-control {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.budget-control input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* -------------------------------------------------------------
+   8. Progress Bar
+   ------------------------------------------------------------- */
+.progress-bar-track {
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+#progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Progress bar state classes — Requirements 5.4, 5.5, 5.6 */
+#progress-bar-fill.state-safe {
+  background-color: var(--color-safe);
+}
+
+#progress-bar-fill.state-warning {
+  background-color: var(--color-warning);
+}
+
+#progress-bar-fill.state-exceeded {
+  background-color: var(--color-exceeded);
+}
+
+#progress-bar-fill.state-neutral {
+  background-color: var(--color-neutral);
+}
+
+#progress-label {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  display: block;
+}
+
+/* -------------------------------------------------------------
+   9. Transaction List
+   ------------------------------------------------------------- */
+.list-container {
+  overflow-y: auto;
+  max-height: 320px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+}
+
+/* Scrollbar styling (Webkit) */
+.list-container::-webkit-scrollbar {
+  width: 6px;
+}
+.list-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.list-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 999px;
+}
+
+#transaction-list {
+  padding: var(--space-xs);
+}
+
+#transaction-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: calc(var(--radius) - 2px);
+  transition: background-color 0.1s ease;
+}
+
+#transaction-list li:hover {
+  background-color: #f3f4f6;
+}
+
+#transaction-list li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.transaction-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.transaction-name {
+  font-weight: 500;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-category {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-amount {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Delete button */
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.delete-btn:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: var(--color-exceeded);
+}
+
+.delete-btn:focus-visible {
+  outline: 3px solid rgba(244, 67, 54, 0.3);
+  outline-offset: 2px;
+}
+
+/* Empty list placeholder */
+.empty-list-msg {
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* -------------------------------------------------------------
+   10. Pie Chart Section
+   ------------------------------------------------------------- */
+.chart-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.chart-section h2 {
+  align-self: flex-start;
+  margin-bottom: 0;
+}
+
+#pie-chart {
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+/* Legend */
+#pie-legend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+#pie-legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--color-text);
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.legend-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------------------------------------------------------------
+   11. Persistence Error Banner
+   ------------------------------------------------------------- */
+.error-banner {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+  color: #856404;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.error-banner.hidden {
+  display: none;
+}
+
+.error-banner .dismiss-btn {
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  color: inherit;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.error-banner .dismiss-btn:hover {
+  opacity: 0.7;
+}
+
+/* -------------------------------------------------------------
+   12. Responsive — 1024px (comfortable two-column)
+   ------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  main {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  #pie-chart {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* -------------------------------------------------------------
+   13. Responsive — 640px breakpoint (single column stack)
+   ------------------------------------------------------------- */
+@media (max-width: 640px) {
+  header {
+    padding: var(--space-md);
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  /* Reset all grid-column/grid-row assignments */
+  .form-section,
+  .budget-section,
+  .transactions-section,
+  .chart-section {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #persistence-error {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #persistence-error:not(.hidden) ~ .form-section,
+  #persistence-error:not(.hidden) ~ .budget-section,
+  #persistence-error:not(.hidden) ~ .transactions-section,
+  #persistence-error:not(.hidden) ~ .chart-section {
+    grid-row: auto;
+  }
+
+  .list-container {
+    max-height: 240px;
+  }
+
+  #pie-chart {
+    width: 200px;
+    height: 200px;
+  }
+
+  .budget-control {
+    flex-direction: column;
+  }
+
+  #balance {
+    font-size: 1.125rem;
+  }
+}
+
+/* -------------------------------------------------------------
+   14. Responsive — 320px minimum (fine-tuning)
+   ------------------------------------------------------------- */
+@media (max-width: 400px) {
+  :root {
+    --space-md: 12px;
+    --space-lg: 16px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .form-section,
+  .budget-section,
+  .transactions-section,
+  .chart-section {
+    padding: var(--space-md);
+  }
+
+  #pie-chart {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* -------------------------------------------------------------
+   15. Responsive — 1920px max-width container (centering)
+   ------------------------------------------------------------- */
+@media (min-width: 1400px) {
+  main {
+    max-width: 1400px;
+    padding: var(--space-xl) var(--space-xl);
+  }
+
+  header {
+    padding: var(--space-md) var(--space-xl);
+  }
+}
+
+/* -------------------------------------------------------------
+   16. Accessibility — reduced motion
+   ------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

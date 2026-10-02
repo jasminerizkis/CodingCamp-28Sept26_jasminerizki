@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense &amp; Budget Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Expense Tracker</h1>
+    <button id="theme" onclick=myFunction()>theme</button>
+    <div id="balance-display">
+      Balance: <span id="balance">Rp 0</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Persistence error banner (hidden by default) -->
+    <div id="persistence-error" class="error-banner hidden" role="alert"></div>
+
+    <section class="form-section" aria-label="Add Expense">
+      <h2>Add Expense</h2>
+      <form id="expense-form" novalidate>
+        <div class="field-group">
+          <label for="input-name">Item Name</label>
+          <input id="input-name" type="text" autocomplete="off">
+          <span class="field-error" id="error-name" role="alert"></span>
+        </div>
+        <div class="field-group">
+          <label for="input-amount">Amount</label>
+          <input id="input-amount" type="number" min="0.01" step="0.01">
+          <span class="field-error" id="error-amount" role="alert"></span>
+        </div>
+        <div class="field-group">
+          <label for="input-category">Category</label>
+          <input id="input-category" type="text" autocomplete="off">
+          <span class="field-error" id="error-category" role="alert"></span>
+        </div>
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+
+    <section class="budget-section" aria-label="Budget Configuration">
+      <h2>Budget Limit</h2>
+      <div class="budget-control">
+        <input id="budget-input" type="number" min="0.01" step="0.01" placeholder="Enter budget">
+        <button id="budget-btn">Set Budget</button>
+      </div>
+      <span class="field-error" id="error-budget" role="alert"></span>
+      <div id="progress-bar-track" class="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="progress-bar-fill" class="state-neutral"></div>
+      </div>
+      <span id="progress-label">No budget set</span>
+    </section>
+
+    <section class="transactions-section" aria-label="Transaction List">
+      <h2>Transactions</h2>
+      <button id="sort-by-category">Sort by Category</button>
+      <button id="sort-by-amount">Sort by Amount</button>
+      <div class="list-container">
+        <ul id="transaction-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <section class="chart-section" aria-label="Spending by Category">
+      <h2>Spending by Category</h2>
+      <canvas id="pie-chart" width="300" height="300" aria-label="Category pie chart"></canvas>
+      <ul id="pie-legend" aria-label="Chart legend"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
